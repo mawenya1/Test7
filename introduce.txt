@@ -1,0 +1,54 @@
+购物车项目，项目具体要求如下。
+
+（1）用JSP编写一个登录页面，登录信息中有用户名和密码，分别用两个按钮来提交和重置登录信息。
+
+（2）编写一个JSP程序来处理用户提交的登录信息，如果用户名为本小组成员的名字且密码为对应的学号时，采用JSP内置对象的方法跳转到订购页面（显示店中商品的种类和单价等目录信息）；否则采用JSP动作提示用户重新登录(注：此页面上要包含前面的登录界面)。
+
+（3）当顾客填好所需商品的数量并点击提交按钮时，将前面订购的商品放入购物车中并显示购物车里的相关信息，包括商品的名称和数量以及所有商品的总价格（关于总价格的计算，要求通过编写一个JavaBean来辅助实现）。
+
+（4）修改登录程序。将合法用户信息（用户名）写入数据库中，登录时通过查找数据库来完成登录。 
+
+（5）将商品信息写入数据库，计算价格时通过查找数据库来完成。
+
+1.由于需要运用数据库来进行判断用户是否登陆，必须需要一个注册页面 reg.jap
+
+2.需要写一个数据库来存储用户信息，表名为 ·user·；（创建表的语句不写）
+
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| uesrname | varchar(20) | NO   |     | NULL    |       |
+| password | int(16)     | NO   |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+
+ create table `goods1` (id int not null auto_increment primary key,goods_name varchar(20), goodspic varchar(30),goods_pri double(10), goods_name_en varchar(20))engine = InnoDB default charset=utf8; 
+
++---------------+-------------+------+-----+---------+----------------+
+| Field         | Type        | Null | Key | Default | Extra          |
++---------------+-------------+------+-----+---------+----------------+
+| id            | int(11)     | NO   | PRI | NULL    | auto_increment |
+| goods_name    | varchar(20) | YES  |     | NULL    |                |
+| goodspic      | varchar(30) | YES  |     | NULL    |                |
+| goods_pri     | varchar(20) | YES  |     | NULL    |                |
+| goods_name_en | varchar(20) | YES  |     | NULL    |                |
++---------------+-------------+------+-----+---------+----------------+
+
+2.1  还需要一个表来存储商品信息 goods 表
+
+3.用户注册的信息以post 的方式提交给doreg.jsp来处理 ，注册成功即跳转商品页面goods.jsp
+
+4.已有账户的用户直接登陆进行，index.jsp
+
+5.检测登陆结果用show.jsp来验证。
+
+6.成功登陆进入商品选择页面，从数据库中调集数据goods1.jsp 
+
+6.1 未用数据库的代码 goods.jsp
+
+7.订购结果order.jsp显示页面，运用javaBean来计算，将逻辑分离
+
+ View Code
+
+8.javaBean的计算代码ShopCar.CountPrice
+
+ View Code
