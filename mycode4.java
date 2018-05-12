@@ -1,4 +1,32 @@
-
+<%@ page language="java" pageEncoding="utf-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>注册页面</title>
+<link href="styles/index.css" rel="stylesheet">
+</head>
+<body>
+<!-- 文件引入的两种方式 -->
+<%--  <%@include file="include/header.inc.html"%> --%>
+<jsp:include page="include/header.inc.html"></jsp:include>
+<p class="welcome">欢迎进入购物车注册界面</p>
+<form action="doreg.jsp" method="post">
+<div>
+<h2>用户名：</h2><input class="input" type="text" name="username"  placeholder="请输入用户名">
+</div>
+<div>
+<h2>密 码：</h2><input class="input" type="password" name="pwd"  placeholder="请输入您的密码">
+</div>
+<div>
+<input class="input1" type="submit" value="注册"> 
+<input class="input1" type="reset" value="重置">
+</div>
+<h3>已有账号，直接<a href="index.jsp">登陆</a></h3>
+</form>
+<%@include file="include/footer.inc.html"%>
+</body>
+</html>
 
 
 <%@page import="java.sql.*"%>
