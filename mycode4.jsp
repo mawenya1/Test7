@@ -1,3 +1,4 @@
+//由于需要运用数据库来进行判断用户是否登录，必须需要一个注册页面 reg.jap
 <%@ page language="java" pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html>
@@ -29,6 +30,7 @@
 </html>
 
 
+//用户注册的信息以post的方式提交给doreg.jsp来处理，注册成功即跳转商品页面goods.jsp
 <%@page import="java.sql.*"%>
 <%@ page language="java" pageEncoding="GB18030"%>
 
@@ -77,6 +79,7 @@ e.printStackTrace();
 
 
 
+//已有账户的用户直接登录进行，index.jsp
 <%@ page language="java" import="java.util.*"
 contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 
@@ -133,6 +136,7 @@ type="submit" value="登陆"> <input class="input1" type="reset" value="重置">
 
 
 
+//检测登录结果用show.jsp来验证
 <%@page import="java.sql.*"%>
 <%@ page language="java" contentType="text/html; charset=GB18030"
 pageEncoding="GB18030"%>
@@ -211,6 +215,7 @@ e.printStackTrace();
 
 
 
+//成功登录进入商品选择页面，从数据库中调集数据goods1.jsp
 <%@page import="java.sql.*"%>
 <%@ page language="java" pageEncoding="utf-8"%>
 <!DOCTYPE html>
@@ -291,6 +296,7 @@ e.printStackTrace();
 </html>
 
 
+//未用数据库的代码goods.jsp
 <%@ page language="java" contentType="text/html; charset=utf-8"
 pageEncoding="GB18030"%>
 <!DOCTYPE html>
